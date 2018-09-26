@@ -7,6 +7,7 @@
 	<!-- ojdbc的jar包 -->
 	<classPathEntry
 		location="C:/TempData/maven-workspace/mysql/mysql-connector-java/8.0.12/mysql-connector-java-8.0.12.jar" />
+	
 	<context id="my" targetRuntime="MyBatis3">
 		<commentGenerator>
 			<property name="suppressDate" value="false" />
@@ -38,20 +39,23 @@
 			type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象  
 			type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
 		 -->
-		<javaClientGenerator targetPackage="priv.dengjl.dao"
+		<javaClientGenerator targetPackage="priv.dengjl.mapper"
 			targetProject="src/main/java" type="XMLMAPPER">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
-		<!-- 目标表，如果有多个表就将此段拷贝分别配置，禁止生成Example,前期以熟练mybatis为主 -->
+		<!-- 目标表，不生成任何语句，只生成文件，前期以熟练mybatis为主 -->
 		
 		<!-- table 可进行以下设置 -->
 		<table tableName="person" domainObjectName="Person"
+			enableInsert="false"
 			enableCountByExample="false" 
 			enableUpdateByExample="false"
             enableDeleteByExample="false" 
             enableSelectByExample="false"
             selectByExampleQueryId="false">
 		</table>
+		
 	</context>
+	
 </generatorConfiguration>

@@ -68,7 +68,7 @@
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
 			<!-- 传播行为 -->
-			<tx:method name="insert*" propagation="REQUIRED" isolation="REPEATABLE_READ"/>
+			<tx:method name="add*" propagation="REQUIRED" isolation="REPEATABLE_READ"/>
 			<tx:method name="delete*" propagation="REQUIRED" isolation="REPEATABLE_READ"/>
 			<tx:method name="update*" propagation="REQUIRED" isolation="REPEATABLE_READ"/>
 			
