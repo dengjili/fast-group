@@ -1,12 +1,12 @@
-package priv.dengjl.service;
+package priv.dengjl.person.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import priv.dengjl.entity.Person;
-import priv.dengjl.mapper.PersonMapper;
+import priv.dengjl.person.entity.Person;
+import priv.dengjl.person.mapper.PersonMapper;
 
 @Service
 public class PersonService {

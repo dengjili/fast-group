@@ -1,4 +1,4 @@
-package priv.dengjl.controller;
+package priv.dengjl.person.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import priv.dengjl.entity.Person;
-import priv.dengjl.service.PersonService;
+import priv.dengjl.person.entity.Person;
+import priv.dengjl.person.service.PersonService;
 
 @Controller
 @RequestMapping("/person")

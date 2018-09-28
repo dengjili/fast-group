@@ -3,17 +3,17 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <settings>
-        <setting name="logImpl" value="LOG4J"/>
-    </settings>
+	<settings>
+		<setting name="logImpl" value="LOG4J" />
+	</settings>
 
-    <!--mapper映射文件可以直接使用pojo名称作为数据类型-->
-    <typeAliases>
-        <package name="priv.dengjl.entity"/>
-    </typeAliases>
+	<!-- 映射数据类型 -->
+	<typeAliases>
+		<package name="priv.dengjl.person.entity" />
+	</typeAliases>
 
-    <!-- 自动扫描mapping.xml文件 -->
-    <mappers>
-        <package name="priv.dengjl.mapper"/>
-    </mappers>
+	<!-- 自动扫描mapping.xml文件 -->
+	<mappers>
+		<package name="priv.dengjl.person.mapper" />
+	</mappers>
 </configuration>

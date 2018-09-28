@@ -39,7 +39,7 @@
 	</bean>
 	
 	<!-- 自动扫描Service文件 -->
-	<context:component-scan base-package="priv.dengjl.service"></context:component-scan>
+	<context:component-scan base-package="priv.dengjl.*.service"></context:component-scan>
 
 	<!-- spring 与  mybatis 整合配置 -->
 	<import resource="classpath:spring-mybatis/spring-mybatis.xml" />

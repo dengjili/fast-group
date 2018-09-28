@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="priv.dengjl.mapper.PersonMapper">
-	<resultMap id="BaseResultMap" type="priv.dengjl.entity.Person">
+<mapper namespace="priv.dengjl.person.mapper.PersonMapper">
+	<resultMap id="BaseResultMap" type="Person">
 		<result column="ID" jdbcType="INTEGER" property="id" />
 		<result column="DISPLAY" jdbcType="VARCHAR" property="display" />
 		<result column="NAME" jdbcType="VARCHAR" property="name" />
@@ -11,27 +11,27 @@
 		<result column="REMARK" jdbcType="VARCHAR" property="remark" />
 	</resultMap>
 
-	<select id="getPerson" parameterType="int" resultType="priv.dengjl.entity.Person">
+	<select id="getPerson" parameterType="int" resultType="Person">
 		SELECT * FROM PERSON WHERE ID = #{id}
 	</select>
 
-	<select id="listPersons" resultType="priv.dengjl.entity.Person">
+	<select id="listPersons" resultType="Person">
 		SELECT * FROM PERSON
 	</select>
 
-	<insert id="addPerson" parameterType="priv.dengjl.entity.Person">
+	<insert id="addPerson" parameterType="Person">
 		insert into PERSON (id,
 		display, name, phone, address, birthdate, remark)
 		values (#{id},
 		#{display}, #{name}, #{phone}, #{address}, #{birthdate}, #{remark})
 	</insert>
 
-	<delete id="deletePerson" parameterType="priv.dengjl.entity.Person">
+	<delete id="deletePerson" parameterType="Person">
 		delete from PERSON where
 		id = #{id}
 	</delete>
 
-	<update id="updatePerson" parameterType="priv.dengjl.entity.Person">
+	<update id="updatePerson" parameterType="Person">
 		update PERSON set
 		display = #{display},
 		name = #{name},

@@ -23,7 +23,7 @@
 	<!-- 自动扫描dao文件,maven项目放在一起，容易出错 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>  
-		<property name="basePackage" value="priv.dengjl.mapper"></property>
+		<property name="basePackage" value="priv.dengjl.*.mapper"></property>
 	</bean>
 
 	<!-- 事务管理器 -->

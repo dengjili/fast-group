@@ -1,8 +1,8 @@
-package priv.dengjl.mapper;
+package priv.dengjl.person.mapper;
 
 import java.util.List;
 
-import priv.dengjl.entity.Person;
+import priv.dengjl.person.entity.Person;
 
 public interface PersonMapper {
 

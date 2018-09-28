@@ -1,4 +1,4 @@
-package priv.dengjl.entity;
+package priv.dengjl.person.entity;
 
 import java.util.Date;
 
