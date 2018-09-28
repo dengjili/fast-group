@@ -7,7 +7,11 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--这里主要是SpringMVC的配置-->
+    <!--使用注解-->
+    <mvc:annotation-driven/>
+    
+    <!-- 自动扫描controller文件 -->
+    <context:component-scan base-package="priv.dengjl.controller"/>
 
     <!--视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -20,10 +24,5 @@
     <mvc:resources mapping="/html/js/**" location="/source/js/"/>
     <mvc:resources mapping="/html/img/**" location="/source/img/"/>
     <mvc:resources mapping="/html/css/**" location="/source/css/"/>
-
-    <!--使用注解-->
-    <mvc:annotation-driven/>
-
-    <!--扫描带有注解的控制类，不可以放在Spring的配置中-->
-    <context:component-scan base-package="priv.dengjl.controller"/>
+    
 </beans>
