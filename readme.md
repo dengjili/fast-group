@@ -1,9 +1,9 @@
 ### 这是一个记录开发技术的项目，设计以下过程
 
-**当前系统阶段为1**
+**当前系统阶段为 2**
 
  1. 后台springmvc，spring，mybatis，页面jstl+jsp（ 前后端绑定），服务器tomcat，版本采用git管理，托管于github
- 2. 完成一个基础blog的页面
+ 2. 完善ssm框架，提供分页，异常等框架的支持，完成一个基础blog的页面
  3. 引入layui/easyui/bootstrap框架（组件化，如维护唯一ajax请求）
  4. 支持 vue.js，前后端办分离（半分离，还是选择node.js 完全分离）
  5. 页面引入中间件，页面搜索。url支持restfull风格
