@@ -23,13 +23,13 @@
 			<property name="" value=""/>
 		</javaTypeResolver>
 
-		<!-- model生成路径 -->
+		<!-- model生成路径  TODO-->
 		<javaModelGenerator targetPackage="priv.dengjl.entity"
 			targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
-		<!-- 映射xml文件生成路径 -->
+		<!-- 映射xml文件生成路径   TODO -->
 		<sqlMapGenerator targetPackage="priv.dengjl.mapper"
 			targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
@@ -37,7 +37,7 @@
 		<!-- 
 			type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象  
 			type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象  
-			type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
+			type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口   TODO
 		 -->
 		<javaClientGenerator targetPackage="priv.dengjl.mapper"
 			targetProject="src/main/java" type="XMLMAPPER">
@@ -46,7 +46,7 @@
 
 		<!-- 目标表，不生成任何语句，只生成文件，前期以熟练mybatis为主 -->
 		
-		<!-- table 可进行以下设置 -->
+		<!-- table 可进行以下设置   TODO -->
 		<table tableName="person" domainObjectName="Person"
 			enableInsert="false"
 			enableCountByExample="false" 

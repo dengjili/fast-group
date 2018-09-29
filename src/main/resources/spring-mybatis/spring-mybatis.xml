@@ -20,7 +20,7 @@
 		<property name="configLocation" value="classpath:mybatis/mybatis-config.xml"></property>
 	</bean>
 	
-	<!-- 自动扫描dao文件,maven项目放在一起，容易出错 -->
+	<!-- 自动扫描dao文件,maven项目与mapper放在一起，容易出错 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>  
 		<property name="basePackage" value="priv.dengjl.*.mapper"></property>
@@ -46,7 +46,7 @@
 	
 	<!-- 切面 -->
 	<aop:config>
-		<aop:advisor advice-ref="txAdvice" pointcut="execution(* priv.dengjl.service.*.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut="execution(* priv.dengjl.*.service.*.*(..))" />
 	</aop:config>
 
 </beans>
