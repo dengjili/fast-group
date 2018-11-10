@@ -24,7 +24,7 @@
 		</javaTypeResolver>
 
 		<!-- model生成路径  TODO-->
-		<javaModelGenerator targetPackage="priv.dengjl.entity"
+		<javaModelGenerator targetPackage="priv.dengjl.bean"
 			targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
@@ -39,7 +39,7 @@
 			type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象  
 			type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口   TODO
 		 -->
-		<javaClientGenerator targetPackage="priv.dengjl.mapper"
+		<javaClientGenerator targetPackage="priv.dengjl.dao"
 			targetProject="src/main/java" type="XMLMAPPER">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>

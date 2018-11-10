@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="priv.dengjl.person.mapper.PersonMapper">
+<mapper namespace="priv.dengjl.person.dao.PersonMapper">
 	<resultMap id="BaseResultMap" type="Person">
 		<result column="ID" jdbcType="INTEGER" property="id" />
 		<result column="DISPLAY" jdbcType="VARCHAR" property="display" />

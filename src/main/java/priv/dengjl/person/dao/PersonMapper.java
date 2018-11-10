@@ -1,9 +1,12 @@
-package priv.dengjl.person.mapper;
+package priv.dengjl.person.dao;
 
 import java.util.List;
 
-import priv.dengjl.person.entity.Person;
+import org.springframework.stereotype.Repository;
 
+import priv.dengjl.person.bean.Person;
+
+@Repository
 public interface PersonMapper {
 
 	List<Person> listPersons();

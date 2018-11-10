@@ -14,25 +14,31 @@
 	http://www.springframework.org/schema/util 
 	http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 	
-	<!-- 自动扫描mapping.xml文件 -->
+	<!-- spring与mybatis的整合类 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="configLocation" value="classpath:mybatis/mybatis-config.xml"></property>
+		<property name="mapperLocations">
+			<list>
+				<value>classpath:priv/dengjl/*/mapper/*Mapper.xml</value>
+			</list>
+		</property>
 	</bean>
 	
-	<!-- 自动扫描dao文件,maven项目与mapper放在一起，容易出错 -->
+	<!-- 扫dao包，扫描注解@Service -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>  
-		<property name="basePackage" value="priv.dengjl.*.mapper"></property>
+		<property name="basePackage" value="priv.dengjl.*.dao"></property>
+		<property name="annotationClass" value="org.springframework.stereotype.Repository"/>
 	</bean>
 
 	<!-- 事务管理器 -->
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<!-- 数据源 -->
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
+	<!-- 事务控制，xml配置方式，不显示配置@Transaction -->
 	<!-- 通知 -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>

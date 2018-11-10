@@ -3,17 +3,10 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<settings>
-		<setting name="logImpl" value="LOG4J" />
-	</settings>
-
 	<!-- 映射数据类型 -->
 	<typeAliases>
-		<package name="priv.dengjl.person.entity" />
+		<package name="priv.dengjl.person.bean" />
 	</typeAliases>
 
-	<!-- 自动扫描mapping.xml文件 -->
-	<mappers>
-		<package name="priv.dengjl.person.mapper" />
-	</mappers>
+	<!-- 自动扫描mapping.xml文件,这里将采用package方式，dao和xml包分开报错了，将xml放于mapperLocations中 -->
 </configuration>

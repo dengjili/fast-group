@@ -15,7 +15,6 @@
 	</properties>
 
 	<dependencies>
-
 		<!-- 前台展示，使用JSTL -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -35,21 +34,14 @@
 			<version>${spring.version}</version>
 		</dependency>
 
-		<!-- spring core Container层  -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-
-		<!-- 数据访问 事务tx，jdbc，根据spring依赖关系，配置spring-jdbc会自动关联spring-tx -->
+		<!-- 数据访问 事务tx，jdbc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
 		
-		<!-- spring代理 依赖于 代理aspectjweaver -->
+		<!-- spring aop -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
@@ -83,13 +75,12 @@
 		    <artifactId>c3p0</artifactId>
 		    <version>0.9.5.2</version>
 		</dependency>
-		
 
-		<!-- 日志输出，spring-core依赖 -->
+		<!-- slf4j日志统一管理 -->
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.25</version>
 		</dependency>
 		
 		<!-- 单元测试 系统默认 -->

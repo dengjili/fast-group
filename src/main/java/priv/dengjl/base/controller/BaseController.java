@@ -40,7 +40,6 @@ public class BaseController {
 	 * @throws
 	 */
 	protected String toPage(String folder, String jspPage) {
-
 		return (folder + '/' + jspPage);
 	}
 

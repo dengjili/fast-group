@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import priv.dengjl.person.entity.Person;
-import priv.dengjl.person.mapper.PersonMapper;
+import priv.dengjl.person.bean.Person;
+import priv.dengjl.person.dao.PersonMapper;
 
 @Service
 public class PersonService {
