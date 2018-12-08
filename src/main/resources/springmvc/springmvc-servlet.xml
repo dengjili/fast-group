@@ -10,8 +10,10 @@
     <!--使用注解-->
     <mvc:annotation-driven/>
     
-    <!-- 自动扫描controller文件 -->
+    <!-- 自动扫描控制器类 -->
     <context:component-scan base-package="priv.dengjl.*.controller"/>
+    <!-- 自动扫描控制器aop配置类 -->
+    <context:component-scan base-package="priv.dengjl.interceptor.config"/>
 
     <!--视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

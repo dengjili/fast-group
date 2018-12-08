@@ -3,10 +3,10 @@
 **当前系统阶段为 2**
 
  1. 后台springmvc，spring，mybatis，页面jstl+jsp（ 前后端绑定），服务器tomcat，版本采用git管理，托管于github
- 2. 引入layui/easyui/bootstrap框架（组件化，模块化）
- 3. ?, 支持 vue.js，前后端办分离（半分离，还是选择node.js 完全分离）
+ 2. url支持restfull风格，建表模型化，引入前台框架layui/bootstrap框架，取代jstl+jsp
+ 3. 前后端办分离（组件化，模块化）
  4. 完善ssm框架，提供分页，异常等框架的支持,提供NoSQL支持，选择redis，完成一个基础blog的页面
- 5. 页面引入中间件，页面搜索。url支持restfull风格
+ 5. 页面引入中间件，页面搜索。
  51. 引入Shiro框架，开发一套权限系统
  52. 持续集成之代码质量管理-Sonar，改变不良编写代码习惯
  6. 数据库读写分离，分表分库，mycat中间件

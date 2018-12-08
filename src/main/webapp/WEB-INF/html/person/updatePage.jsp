@@ -10,7 +10,7 @@
 <body>
 
 	<h2>用户添加</h2>
-	<form action="update" method="post">
+	<form action="../update" method="post">
 		<table>
 			<tr style="display:none">
 				<td>用户ID</td>

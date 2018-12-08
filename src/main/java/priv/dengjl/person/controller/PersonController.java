@@ -11,8 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import priv.dengjl.person.bean.Person;
 import priv.dengjl.person.service.PersonService;
@@ -25,67 +27,67 @@ public class PersonController {
 	private PersonService service;
 
 	@RequestMapping(value = "/list")
-	public String listPerson(Model model) {
-
+	public ModelAndView listPerson(Model model) {
 		List<Person> listPerson = service.listPerson();
 		model.addAttribute("persons", listPerson);
 
-		return "person/list";
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("person/list");
+		return mv;
 	}
 
 	@RequestMapping(value = "/addPage")
-	public String addPersonPage(Model model) {
-		return "person/addPage";
+	public ModelAndView addPersonPage(Model model) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("person/addPage");
+		return mv;
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String addPerson(@ModelAttribute Person person, Model model) {
-
+	public ModelAndView addPerson(@ModelAttribute Person person) {
 		service.addPerson(person);
-
-		return "redirect:list";
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:/person/list");
+		return mv;
 	}
 	
-	@RequestMapping(value = "/delete")
-	public String deletePerson(@ModelAttribute Person person, Model model) {
-
+	@RequestMapping(value = "/delete/{id}")
+	public ModelAndView deletePerson(@PathVariable("id") int id) {
+		Person person = new Person();
+		person.setId(id);
 		service.deletePerson(person);
-
-		return "redirect:list";
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:/person/list");
+		return mv;
 	}
 	
 
-	@RequestMapping(value = "/updatePage")
-	public String updatePersonPage(@ModelAttribute Person person, Model model) {
-
+	@RequestMapping(value = "/updatePage/{id}")
+	public ModelAndView updatePersonPage(@PathVariable("id") int id, Model model) {
+		Person person = new Person();
+		person.setId(id);
 		Person personDb = service.getPerson(person.getId());
 		model.addAttribute("person", personDb);
-
-		return "person/updatePage";
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("person/updatePage");
+		return mv;
 	}
 	
-
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public String updatePerson(@ModelAttribute Person person, Model model) {
-
+	public ModelAndView updatePerson(@ModelAttribute Person person) {
 		service.updatePerson(person);
-
-		return "redirect:list";
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:/person/list");
+		return mv;
 	}
 	
 
-	@RequestMapping(value = "/get")
-	public String getPerson(@ModelAttribute Person person, Model model) {
-
-		Person personDb = service.getPerson(person.getId());
+	@RequestMapping(value = "/get/{id}")
+	public ModelAndView getPerson(@PathVariable("id") int id, Model model) {
+		Person personDb = service.getPerson(id);
 		model.addAttribute("person", personDb);
-
-		return "person/detail";
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("person/detail");
+		return mv;
 	}
-
-	@InitBinder
-	public void init(WebDataBinder binder) {
-		binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), true));
-	}
-
 }

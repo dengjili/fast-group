@@ -31,9 +31,9 @@
 				<td>${person.birthdate}</td>
 				<td>${person.remark}</td>
 				<td>
-					<a href="updatePage?id=${person.id}">修改</a>
-					<a href="delete?id=${person.id}">删除</a>
-					<a href="get?id=${person.id}">详细信息</a>
+					<a href="updatePage/${person.id}">修改</a>
+					<a href="delete/${person.id}">删除</a>
+					<a href="get/${person.id}">详细信息</a>
 				</td>
 			</tr>
 		</c:forEach>
