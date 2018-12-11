@@ -1,15 +1,10 @@
 package priv.dengjl.person.controller;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,7 +27,25 @@ public class PersonController {
 		model.addAttribute("persons", listPerson);
 
 		ModelAndView mv = new ModelAndView();
+
 		mv.setViewName("person/list");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/queryByCond")
+	public ModelAndView queryByCond(String query_id, String query_name, Model model) {
+		List<Person> listPerson = service.listPersonByCond(query_id, query_name);
+		model.addAttribute("persons", listPerson);
+
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("person/list");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/other")
+	public ModelAndView other(Model model) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("person/other");
 		return mv;
 	}
 
@@ -44,10 +57,14 @@ public class PersonController {
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public ModelAndView addPerson(@ModelAttribute Person person) {
+	public ModelAndView addPerson(@ModelAttribute Person person, Model model) {
 		service.addPerson(person);
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("redirect:/person/list");
+		
+		List<Person> listPerson = service.listPerson();
+		model.addAttribute("persons", listPerson);
+		mv.setViewName("person/addPage");
+		// mv.setViewName("redirect:/person/list");
 		return mv;
 	}
 	

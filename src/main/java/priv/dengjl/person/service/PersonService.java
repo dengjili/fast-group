@@ -38,5 +38,10 @@ public class PersonService {
 	public void updatePerson(Person person) {
 		mapper.updatePerson(person);
 	}
+
+	// 模糊查询
+	public List<Person> listPersonByCond(String id, String name) {
+		return mapper.listPersonByCond(id, name);
+	}
 	
 }

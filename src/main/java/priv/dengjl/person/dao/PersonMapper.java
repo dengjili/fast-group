@@ -2,6 +2,7 @@ package priv.dengjl.person.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import priv.dengjl.person.bean.Person;
@@ -18,4 +19,6 @@ public interface PersonMapper {
 	Person getPerson(int id);
 
 	void updatePerson(Person person);
+
+	List<Person> listPersonByCond(@Param("id")String id, @Param("name")String name);
 }

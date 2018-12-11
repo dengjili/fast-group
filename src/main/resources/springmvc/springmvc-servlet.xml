@@ -22,9 +22,9 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!--将链接中/p的静态的访问路径映射为URL，常用于加载html、js、css、图片、视频等静态资源-->
-    <mvc:resources mapping="/html/js/**" location="/source/js/"/>
-    <mvc:resources mapping="/html/img/**" location="/source/img/"/>
-    <mvc:resources mapping="/html/css/**" location="/source/css/"/>
+    <!--静态资源配置 [css js]-->
+    <mvc:resources location="/static-resource/" mapping="/static-resource/**"/>
+    <!--静态html配置 [html]-->
+    <mvc:resources location="/html/" mapping="/html/**"/>
     
 </beans>
