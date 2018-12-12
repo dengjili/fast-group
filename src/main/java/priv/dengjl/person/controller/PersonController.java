@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import priv.dengjl.base.bean.PageParams;
+import priv.dengjl.base.bean.ReturnParam;
 import priv.dengjl.person.bean.Person;
 import priv.dengjl.person.service.PersonService;
 
@@ -25,6 +27,18 @@ public class PersonController {
 	public ModelAndView listPerson(Model model) {
 		List<Person> listPerson = service.listPerson();
 		model.addAttribute("persons", listPerson);
+
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("person/list");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/listPage")
+	public ModelAndView listPersonPage(Model model, PageParams params) {
+		ReturnParam<Person> returnParam = service.listPagePersons(params);
+		model.addAttribute("persons", returnParam.getList());
+		model.addAttribute("page", returnParam.getPage());
 
 		ModelAndView mv = new ModelAndView();
 

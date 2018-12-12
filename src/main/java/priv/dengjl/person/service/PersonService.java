@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import priv.dengjl.base.bean.PageParams;
+import priv.dengjl.base.bean.ReturnParam;
 import priv.dengjl.person.bean.Person;
 import priv.dengjl.person.dao.PersonMapper;
 
@@ -19,7 +20,13 @@ public class PersonService {
 	public List<Person> listPerson() {
 		return mapper.listPagePersons(new PageParams());
 	}
-
+	
+	public ReturnParam<Person> listPagePersons(PageParams params) {
+		List<Person> listPagePersons = mapper.listPagePersons(params);
+		ReturnParam<Person> persons = new ReturnParam<Person> (params);
+		persons.setList(listPagePersons);
+		return persons;
+	}
 	// 添加一个用户
 	public void addPerson(Person person) {
 		mapper.addPerson(person);

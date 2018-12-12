@@ -109,9 +109,20 @@ $(document).ready(function(){
 	 
 	 //执行一个laypage实例
 	 var laypage = layui.laypage;
+	 var layer = layui.layer;
+	//完整功能
 	  laypage.render({
-	    elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
-	    ,count: 50 //数据总数，从服务端得到
+	    elem: 'test1'
+	    ,count: ${page.total}
+	    ,limits:[5, 10, 20, 50, 100, 200]
+	    ,layout: ['prev', 'page', 'next', 'skip', 'count', 'limit']
+	    ,theme: '#c00' 
+	    ,skip: true //开启跳页
+	        ,jump: function(obj, first){
+	          if(!first){
+	            layer.msg('第'+ obj.curr +'页, 页面为：' + obj.limit);
+	          }
+	        }
 	  });
 });
 </script> 
