@@ -5,12 +5,15 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import priv.dengjl.base.bean.PageParams;
 import priv.dengjl.person.bean.Person;
 
 @Repository
 public interface PersonMapper {
 
 	List<Person> listPersons();
+	
+	List<Person> listPagePersons(PageParams params);
 
 	void addPerson(Person person);
 

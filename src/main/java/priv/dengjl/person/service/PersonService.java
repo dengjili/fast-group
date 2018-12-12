@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import priv.dengjl.base.bean.PageParams;
 import priv.dengjl.person.bean.Person;
 import priv.dengjl.person.dao.PersonMapper;
 
@@ -16,7 +17,7 @@ public class PersonService {
 	
 	// 不分页查询
 	public List<Person> listPerson() {
-		return mapper.listPersons();
+		return mapper.listPagePersons(new PageParams());
 	}
 
 	// 添加一个用户

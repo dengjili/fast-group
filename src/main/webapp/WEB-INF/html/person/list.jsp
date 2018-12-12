@@ -46,6 +46,8 @@
 			</c:forEach>
 		</table>
 	</div>
+	
+	<div id="test1"></div>
 </div>
 
 <div id="query" class="popup-none">
@@ -104,6 +106,13 @@ $(document).ready(function(){
 	 $("#redoquery2").bind("click", function(){
 		 $.popup.show("query2", "页面查询2");
 	 });
+	 
+	 //执行一个laypage实例
+	 var laypage = layui.laypage;
+	  laypage.render({
+	    elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+	    ,count: 50 //数据总数，从服务端得到
+	  });
 });
 </script> 
 

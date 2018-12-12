@@ -18,6 +18,10 @@
 	<select id="listPersons" resultType="Person">
 		SELECT * FROM PERSON
 	</select>
+	
+	<select id="listPagePersons" resultType="Person">
+		SELECT * FROM PERSON
+	</select>
 
 	<insert id="addPerson" parameterType="Person">
 		insert into PERSON (id,
